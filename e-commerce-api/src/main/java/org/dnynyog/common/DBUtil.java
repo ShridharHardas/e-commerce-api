@@ -7,9 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DBUtil {
-	private static Connection connection;
+	private static  Connection connection;
 	private static Statement statement;
-	
 	static 
 	{
 		try {
@@ -19,8 +18,8 @@ public class DBUtil {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
-	
 	public static ResultSet executeSelectQuery(String query) throws SQLException
 	{
 		ResultSet resultSet=statement.executeQuery(query);
@@ -31,5 +30,4 @@ public class DBUtil {
 	{
 		statement.execute(query);
 	}
-
 }
