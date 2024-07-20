@@ -19,13 +19,15 @@ public class Users {
     @Column
     private String lastName;
     @Column
-    private Integer age;
-    @Column
-    private String gender;
-    @Column
-    private Long mobileNo;
+    private String loginName;
     @Column
     private String password;
+	public String getLoginName() {
+		return loginName;
+	}
+	public void setLoginName(String loginName) {
+		this.loginName = loginName;
+	}
 	public Integer getId() {
 		return id;
 	}
@@ -44,24 +46,7 @@ public class Users {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public Integer getAge() {
-		return age;
-	}
-	public void setAge(Integer age) {
-		this.age = age;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-	public Long getMobileNo() {
-		return mobileNo;
-	}
-	public void setMobileNo(Long mobileNo) {
-		this.mobileNo = mobileNo;
-	}
+	
 	public String getPassword() {
 		return password;
 	}

@@ -19,8 +19,9 @@ public class LoginService {
 		LoginResponce loginResponce=new LoginResponce();
 		//Users users=userdao.findById(1).get();
 		//Users users=userdao.findByFirstName(loginBody.user);
-		 Users users=userdao.findByPassword(loginBody.password);
-		if(users.getFirstName().equals(loginBody.user) && users.getPassword().equals(loginBody.password))
+		//Users users=userdao.findByPassword(loginBody.password);
+		Users users=userdao.findByLoginName(loginBody.user);
+		if(users.getLoginName().equals(loginBody.user) && users.getPassword().equals(loginBody.password))
 		{
 		
 			loginResponce.errorCode="0000";
@@ -28,9 +29,7 @@ public class LoginService {
 			loginResponce.id=users.getId();
 			loginResponce.firstName=users.getFirstName();
 			loginResponce.lastName=users.getLastName();
-			loginResponce.age=users.getAge();
-			loginResponce.gender=users.getGender();
-			loginResponce.mobileNo=users.getMobileNo();
+			loginResponce.loginName=users.getLoginName();
 			loginResponce.password=users.getPassword();
 			return loginResponce;
 		}

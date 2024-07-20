@@ -6,9 +6,7 @@ public class LoginResponce {
 	public int id;
 	public String firstName;
 	public String lastName;
-	public int age;
-	public String gender;
-	public long mobileNo;
+	public String loginName;
 	public String password;
 
 }
