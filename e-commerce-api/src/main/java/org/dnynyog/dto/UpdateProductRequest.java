@@ -1,9 +1,16 @@
 package org.dnynyog.dto;
 
-public class AddProductRequest {
+public class UpdateProductRequest {
+	private Integer product_id;
 	private String productName;
 	private int productQuantity;
 	private long productPrice;
+	public Integer getProduct_id() {
+		return product_id;
+	}
+	public void setProduct_id(Integer product_id) {
+		this.product_id = product_id;
+	}
 	public String getProductName() {
 		return productName;
 	}
@@ -22,5 +29,4 @@ public class AddProductRequest {
 	public void setProductPrice(long productPrice) {
 		this.productPrice = productPrice;
 	}
-
 }

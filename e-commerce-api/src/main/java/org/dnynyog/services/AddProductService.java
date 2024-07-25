@@ -4,29 +4,64 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.dnynyog.common.DBUtil;
+import org.dnynyog.dao.Productdao;
 import org.dnynyog.dto.AddProductRequest;
 import org.dnynyog.dto.AddProductResponce;
-
+import org.dnynyog.dto.UpdateProductRequest;
+import org.dnynyog.dto.UpdateProductResponce;
+import org.dnynyog.dto.UpdateUserResponce;
+import org.dnynyog.entity.Products;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+@Component
 public class AddProductService {
-	public AddProductResponce addProduct(AddProductRequest addProduct) throws SQLException
+	@Autowired
+	Productdao productdao;
+	
+	public AddProductResponce addProduct(AddProductRequest request) throws SQLException
 	{
-		AddProductResponce addProductResponce=new AddProductResponce();
-		String query="insert into product( productName, productQuantity, productPrice) values('"+addProduct.productName+"','"+addProduct.productQuantity+"','"+addProduct.productPrice+"')";
-		DBUtil.executeQuery(query);
-		String selectQuery="select * from product where productName='"+addProduct.productName+"'";
-		ResultSet result=DBUtil.executeSelectQuery(selectQuery);
-		if(result.next())
+		Products productTable=new Products();
+		productTable.setProductName(request.getProductName());
+		productTable.setProductPrice(request.getProductPrice());
+		productTable.setProductQunatity(request.getProductQuantity());
+		
+		Products product=productdao.save(productTable);
+		
+		AddProductResponce responce=new AddProductResponce();
+		responce.setCodeResponce("0000");
+		responce.setMessage("Add Product Successfully..!");
+		responce.setRequest(request);
+		
+		return responce;
+	}
+	
+	public UpdateProductResponce updateProduct(UpdateProductRequest updateRequest)
+	{	
+		UpdateProductResponce responce=new UpdateProductResponce();
+		if(updateRequest.getProduct_id()==null)
 		{
-			addProductResponce.errorCode="000";
-			addProductResponce.message="Product Addition Successfully..!";
-			return addProductResponce;
+			responce.setCodeResponce("911");
+			responce.setMessage("product_id not sent request,it is mandatory to update.!");
+			return responce;
 		}
-		else
+		Products productTable=new Products();
+		if(productTable.getId()==null)
 		{
-			addProductResponce.errorCode="9111";
-			addProductResponce.message="Product Addition Failed";
-			return addProductResponce;
+			responce.setCodeResponce("911");
+			responce.setMessage("product_id not found in table.!");
+			return responce;
 		}
+		
+		productTable.setId(updateRequest.getProduct_id());
+		productTable.setProductName(updateRequest.getProductName());
+		productTable.setProductQunatity(updateRequest.getProductQuantity());
+		productTable.setProductPrice(updateRequest.getProductPrice());
+		productdao.save(productTable);
+		
+		responce.setCodeResponce("0000");
+		responce.setMessage("Update Product Data Successfully..!");
+		responce.setRequest(updateRequest);
+		return responce;
 	}
 
 }

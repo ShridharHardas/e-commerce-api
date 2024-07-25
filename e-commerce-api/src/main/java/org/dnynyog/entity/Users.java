@@ -1,7 +1,10 @@
 package org.dnynyog.entity;
 
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,6 +16,7 @@ import org.springframework.stereotype.Component;
 public class Users {
     @Id
     @Column
+    @GeneratedValue
 	private Integer id;
     @Column
     private String firstName;
@@ -21,6 +25,38 @@ public class Users {
     @Column
     private String loginName;
     @Column
+    private Integer age;
+    @Column
+    private String gender;
+    @Column
+    private String email;
+    @Column
+    private Long mobileNo;
+    public Long getMobileNo() {
+		return mobileNo;
+	}
+	public void setMobileNo(Long mobileNo) {
+		this.mobileNo = mobileNo;
+	}
+	public Integer getAge() {
+		return age;
+	}
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	@Column
     private String password;
 	public String getLoginName() {
 		return loginName;

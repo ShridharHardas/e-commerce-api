@@ -1,10 +1,9 @@
 package org.dnynyog.dto;
 
-public class AddUserResponce {
+public class UpdateUserResponce {
 	private String codeResponce;
 	private String message;
-	private int user_id; 
-	private AddUserRequest request;
+	private UpdateUserRequest request;
 	public String getCodeResponce() {
 		return codeResponce;
 	}
@@ -17,17 +16,10 @@ public class AddUserResponce {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public int getUser_id() {
-		return user_id;
-	}
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
-	}
-	public AddUserRequest getRequest() {
+	public UpdateUserRequest getRequest() {
 		return request;
 	}
-	public void setRequest(AddUserRequest request) {
+	public void setRequest(UpdateUserRequest request) {
 		this.request = request;
 	}
-
 }
