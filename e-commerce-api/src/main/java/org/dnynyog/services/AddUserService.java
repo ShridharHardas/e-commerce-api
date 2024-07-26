@@ -2,6 +2,8 @@ package org.dnynyog.services;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Optional;
+
 import org.dnynyog.common.DBUtil;
 import org.dnynyog.dao.Userdao;
 import org.dnynyog.dto.AddUserRequest;
@@ -41,6 +43,7 @@ public class AddUserService {
 	public UpdateUserResponce updateUser(UpdateUserRequest updateUserRequest)
 	{
 		UpdateUserResponce responce=new UpdateUserResponce();
+		Users userTable=new Users();
 		
 		if(updateUserRequest.getUser_Id()==null)
 		{
@@ -48,31 +51,36 @@ public class AddUserService {
 			responce.setMessage("user_id not sent request,it is mandatory to update.!");
 			return responce;
 		}
-		Users userTable=new Users();
-		if(updateUserRequest.getUser_Id()!=userTable.getId())
-		{
-			responce.setCodeResponce("911");
-			responce.setMessage("user_id do not found in table.!");
+		
+		Optional<Users> userData=userdao.findById(updateUserRequest.getUser_Id());
+		if(userData.isPresent())
+		{   
+			userTable.setId(updateUserRequest.getUser_Id());
+			userTable.setFirstName(updateUserRequest.getFirstName());
+			userTable.setLastName(updateUserRequest.getLastName());
+			userTable.setLoginName(updateUserRequest.getLoginName());
+			userTable.setAge(updateUserRequest.getAge());
+			userTable.setGender(updateUserRequest.getGender());
+			userTable.setEmail(updateUserRequest.getEmail());
+			userTable.setMobileNo(updateUserRequest.getMobileNo());
+			userTable.setPassword(updateUserRequest.getPassword());
+			
+			userdao.save(userTable);
+			responce.setCodeResponce("0000");
+			responce.setMessage("Update User Data Successfully..!");
+			responce.setRequest(updateUserRequest);
 			return responce;
 		}
-	
 		
-		userTable.setId(updateUserRequest.getUser_Id());
-		userTable.setFirstName(updateUserRequest.getFirstName());
-		userTable.setLastName(updateUserRequest.getLastName());
-		userTable.setLoginName(updateUserRequest.getLoginName());
-		userTable.setAge(updateUserRequest.getAge());
-		userTable.setGender(updateUserRequest.getGender());
-		userTable.setEmail(updateUserRequest.getEmail());
-		userTable.setMobileNo(updateUserRequest.getMobileNo());
-		userTable.setPassword(updateUserRequest.getPassword());
+		else
+		{
+			responce.setCodeResponce("9111");
+			responce.setMessage("user_id not present in the table.!");
+			return responce;
+		}
 		
-		userdao.save(userTable);
 		
-		responce.setCodeResponce("0000");
-		responce.setMessage("Update User Data Successfully..!");
-		responce.setRequest(updateUserRequest);
-		return responce;
+		
 		
 		
 }

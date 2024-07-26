@@ -2,9 +2,12 @@ package org.dnynyog.services;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.Optional;
 
 import org.dnynyog.common.DBUtil;
 import org.dnynyog.dao.Productdao;
+import org.dnynyog.dao.Userdao;
 import org.dnynyog.dto.AddProductRequest;
 import org.dnynyog.dto.AddProductResponce;
 import org.dnynyog.dto.UpdateProductRequest;
@@ -38,20 +41,18 @@ public class AddProductService {
 	public UpdateProductResponce updateProduct(UpdateProductRequest updateRequest)
 	{	
 		UpdateProductResponce responce=new UpdateProductResponce();
+		Products productTable=new Products();
 		if(updateRequest.getProduct_id()==null)
 		{
 			responce.setCodeResponce("911");
 			responce.setMessage("product_id not sent request,it is mandatory to update.!");
 			return responce;
 		}
-		Products productTable=new Products();
-		if(productTable.getId()==null)
-		{
-			responce.setCodeResponce("911");
-			responce.setMessage("product_id not found in table.!");
-			return responce;
-		}
 		
+		Optional<Products> productData=productdao.findById(updateRequest.getProduct_id());
+		
+		if(productData.isPresent())
+		{
 		productTable.setId(updateRequest.getProduct_id());
 		productTable.setProductName(updateRequest.getProductName());
 		productTable.setProductQunatity(updateRequest.getProductQuantity());
@@ -62,6 +63,13 @@ public class AddProductService {
 		responce.setMessage("Update Product Data Successfully..!");
 		responce.setRequest(updateRequest);
 		return responce;
-	}
+		}
+		else
+		{
+			responce.setCodeResponce("9111");
+			responce.setMessage("product_id not found in the table..!");
+			return responce;
+		}
 
+}
 }
