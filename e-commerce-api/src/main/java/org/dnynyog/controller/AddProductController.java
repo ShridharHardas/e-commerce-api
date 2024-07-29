@@ -8,6 +8,7 @@ import org.dnynyog.dto.UpdateProductRequest;
 import org.dnynyog.dto.UpdateProductResponce;
 import org.dnynyog.services.AddProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,4 +29,6 @@ public class AddProductController {
 	{
 		return addProductService.updateProduct(updateProduct);
 	}
+	
+	
 }

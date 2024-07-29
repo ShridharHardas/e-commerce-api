@@ -33,6 +33,7 @@ public class AddProductService {
 		AddProductResponce responce=new AddProductResponce();
 		responce.setCodeResponce("0000");
 		responce.setMessage("Add Product Successfully..!");
+		responce.setProduct_id(product.getId());
 		responce.setRequest(request);
 		
 		return responce;
