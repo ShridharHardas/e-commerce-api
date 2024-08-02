@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="867.0" prefWidth="1309.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.HomeScreenController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff971f" height="867.0" layoutX="-1.0" stroke="BLACK" strokeType="INSIDE" width="628.0" />
+      <Label layoutX="114.0" layoutY="265.0" text="ECommerce_Management" textFill="#030000">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+      <Label layoutX="722.0" layoutY="153.0" text="What Would You Like To Do Today ? " textFill="#612008">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Line endX="100.0" layoutX="951.0" layoutY="213.0" startX="-100.0" />
+      <Button fx:id="adduserbutton" layoutX="791.0" layoutY="282.0" mnemonicParsing="false" onAction="#addUserButton" prefHeight="62.0" prefWidth="355.0" text="User Management" textFill="RED">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Button>
+      <Button fx:id="addproductbutton" layoutX="791.0" layoutY="413.0" mnemonicParsing="false" onAction="#addProductButton" prefHeight="62.0" prefWidth="355.0" text="Product Management" textFill="RED">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Button>
+      <Button fx:id="logoutbutton" layoutX="791.0" layoutY="540.0" mnemonicParsing="false" onAction="#LogoutButton" prefHeight="62.0" prefWidth="355.0" text="Logout" textFill="RED">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="173.0" fitWidth="233.0" layoutX="218.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/4.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="838.0" layoutY="50.0" text="Home Screen" textFill="#430505">
+         <font>
+            <Font name="Cambria Math" size="49.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

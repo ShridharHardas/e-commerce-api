@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="867.0" prefWidth="1309.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="product_management.ProductManagementController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff971f" height="867.0" layoutX="-1.0" stroke="BLACK" strokeType="INSIDE" width="628.0" />
+      <Label layoutX="114.0" layoutY="265.0" text="ECommerce_Management" textFill="#030000">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+      <Label layoutX="722.0" layoutY="153.0" text="What Would You Like To Do Today ? " textFill="#612008">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Line endX="100.0" layoutX="951.0" layoutY="213.0" startX="-100.0" />
+      <Button fx:id="addproductrbutton" layoutX="791.0" layoutY="234.0" mnemonicParsing="false" onAction="#addProductButton" prefHeight="62.0" prefWidth="355.0" text="Add Product" textFill="RED">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Button>
+      <Button fx:id="updateproductbutton" layoutX="792.0" layoutY="326.0" mnemonicParsing="false" onAction="#updateProductButton" prefHeight="62.0" prefWidth="355.0" text="Update Product" textFill="RED">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Button>
+      <Button fx:id="searchbutton" layoutX="792.0" layoutY="411.0" mnemonicParsing="false" onAction="#searchButton" prefHeight="62.0" prefWidth="355.0" text="Search Product" textFill="RED">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="173.0" fitWidth="233.0" layoutX="218.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/4.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="765.0" layoutY="56.0" text="Product Management" textFill="#430505">
+         <font>
+            <Font name="Cambria Math" size="49.0" />
+         </font>
+      </Label>
+      <Button fx:id="deleteproductbutton" layoutX="792.0" layoutY="499.0" mnemonicParsing="false" onAction="#deleteProductButton" prefHeight="62.0" prefWidth="355.0" text="Delete Product" textFill="RED">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Button>
+      <Button fx:id="printproductbutton" layoutX="791.0" layoutY="597.0" mnemonicParsing="false" onAction="#printProductButton" prefHeight="62.0" prefWidth="355.0" text="Print Product" textFill="RED">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Button>
+      <Button fx:id="back" layoutX="792.0" layoutY="689.0" mnemonicParsing="false" onAction="#backbutton" prefHeight="62.0" prefWidth="355.0" text="Back To Main Menu" textFill="RED">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="867.0" prefWidth="1309.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="search_product.SearchProductController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff971f" height="867.0" layoutX="-1.0" stroke="BLACK" strokeType="INSIDE" width="593.0" />
+      <Label layoutX="114.0" layoutY="265.0" text="ECommerce_Management" textFill="#030000">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="173.0" fitWidth="233.0" layoutX="218.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/4.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="791.0" layoutY="158.0" prefHeight="39.0" prefWidth="343.0" text="Product Name To Search" textFill="RED">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="productnametosearch" layoutX="747.0" layoutY="226.0" prefHeight="39.0" prefWidth="419.0">
+         <cursor>
+            <Cursor fx:constant="N_RESIZE" />
+         </cursor>
+         <effect>
+            <InnerShadow color="#bfc694" />
+         </effect>
+      </TextField>
+      <Label layoutX="802.0" layoutY="42.0" prefHeight="50.0" prefWidth="309.0" text="Search Product" textFill="#977720">
+         <font>
+            <Font name="Calibri" size="44.0" />
+         </font>
+      </Label>
+      <Line endX="100.0" layoutX="956.0" layoutY="92.0" startX="-100.0" />
+      <Line endX="100.0" layoutX="977.0" layoutY="104.0" startX="-100.0" />
+      <Button fx:id="productsearch" layoutX="878.0" layoutY="292.0" mnemonicParsing="false" onAction="#searchProduct" prefHeight="25.0" prefWidth="156.0" text="Submit">
+         <effect>
+            <DropShadow color="#b9b9b9" />
+         </effect>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label fx:id="errormessage" layoutX="791.0" layoutY="351.0" prefHeight="30.0" prefWidth="343.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="607.0" layoutY="456.0" prefHeight="39.0" prefWidth="216.0" text="Product Name " textFill="RED">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="613.0" layoutY="525.0" prefHeight="39.0" prefWidth="231.0" text="Product Quantity" textFill="RED">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="613.0" layoutY="597.0" prefHeight="39.0" prefWidth="195.0" text="Product  Price" textFill="RED">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchName" layoutX="825.0" layoutY="456.0" prefHeight="39.0" prefWidth="419.0">
+         <cursor>
+            <Cursor fx:constant="N_RESIZE" />
+         </cursor>
+         <effect>
+            <InnerShadow color="#bfc694" />
+         </effect>
+      </TextField>
+      <TextField fx:id="searchQuantity" layoutX="825.0" layoutY="525.0" prefHeight="39.0" prefWidth="419.0">
+         <cursor>
+            <Cursor fx:constant="N_RESIZE" />
+         </cursor>
+         <effect>
+            <InnerShadow color="#bfc694" />
+         </effect>
+      </TextField>
+      <TextField fx:id="searchPrice" layoutX="825.0" layoutY="597.0" prefHeight="39.0" prefWidth="419.0">
+         <cursor>
+            <Cursor fx:constant="N_RESIZE" />
+         </cursor>
+         <effect>
+            <InnerShadow color="#bfc694" />
+         </effect>
+      </TextField>
+      <Button layoutX="598.0" layoutY="12.0" mnemonicParsing="false" onAction="#backbutton" prefHeight="39.0" prefWidth="68.0" text="&lt;" textFill="#780251">
+         <effect>
+            <DropShadow color="#b9b9b9" />
+         </effect>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
